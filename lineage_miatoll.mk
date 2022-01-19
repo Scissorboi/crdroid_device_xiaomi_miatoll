@@ -7,8 +7,8 @@
 # Inherit from miatoll  device
 $(call inherit-product, device/xiaomi/miatoll/device.mk)
 
-# Inherit some common ArrowOS stuff
-$(call inherit-product, vendor/lineage/config/common.mk)
+# Inherit some common LineageOS stuff
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Bootanimation Resolution
 TARGET_BOOT_ANIMATION_RES := 1080
@@ -22,8 +22,10 @@ PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-# Maintainer
-DEVICE_MAINTAINER := SonalSingh18
+# pixel experience gapps
+TARGET_GAPPS_ARCH := arm64
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
+TARGET_SUPPORTS_QUICK_TAP := true
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="walleye-user 8.1.0 OPM1.171019.011 4448085 release-keys"
